@@ -684,3 +684,38 @@ header{
     transform: translateY(6px);
   }
 }
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-left, .hero-right {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .hero-right {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-wrapper {
+    flex-direction: row;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-content, .about-image {
+    max-width: 45%;
+    flex: 1;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+}
