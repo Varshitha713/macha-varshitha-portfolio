@@ -11,6 +11,7 @@
 </head>
 <body>
   <header>
+    <div class="progress-bar"></div> 
      <div class="nav-bar">
       <div class="menu-toggle">
         <div></div>
@@ -383,9 +384,6 @@
         <li>Contributed to strategic planning and business development initiatives</li>
       </ul>
       
-      <a href="#" class="learn-more-btn">
-        <span>VIEW PROJECT</span>
-      </a>
     </div>
 
     <!-- Experience Card 2 - Open Source Contributor -->
@@ -401,7 +399,7 @@
         <div class="card-content">
           <h3 class="company-name">Social Summer of Code</h3>
           <p class="job-title">Open Source Contributor</p>
-          <p class="duration">Extended Program</p>
+          <p class="duration">Oct 2024– Nov 2024</p>
         </div>
       </div>
       
@@ -438,81 +436,11 @@
         <li>Led promotional efforts to increase student participation</li>
         <li>Facilitated knowledge sharing sessions on AI/ML topics</li>
       </ul>
-      
-      <a href="#" class="learn-more-btn">
-        <span>LEARN MORE</span>
-      </a>
     </div>
   </div>
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section id="projects">
-        <h2>Projects</h2>
-          <div class="projects">
-            <div class="project">
-              <h3>Portfolio Website</h3>
-              <p>A personal portfolio website showcasing my skills and projects.</p>
-            </div>
-            <div class="project">
-              <h3>Add to Cart</h3>
-            </div>
-            <div class="project">
-              <h3>E-Commerce Website</h3>
-            </div>
-        </div>
-        </section>
-    <section id="experiences">
-        <h2>Experience</h2>
-            <div class="experience">
-              <h3>Startup-Intern</h3>
-          </div>
-          <div class="experience">
-              <h3>Startup-Intern</h3>
-          </div>
-    </section>
    </main>
    <footer>
     <div class="footer">
@@ -544,6 +472,16 @@
 
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+  });
+
+
+   window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = scrollPercent + '%';
   });
 </script>
 
