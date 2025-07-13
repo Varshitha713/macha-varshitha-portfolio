@@ -1173,3 +1173,309 @@ header{
     font-size: 0.9rem;
   }
 }
+
+
+/* 🔆 Glowing background circle */
+.projects-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(162, 89, 255, 0.08), transparent 70%);
+  transform: translate(-50%, -40%);
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+#projects {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Header */
+.section-title {
+  font-size: 2.6rem;
+  background: linear-gradient(to right, #a259ff, #f14dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+   background-clip: text;            /* ✅ Standard syntax */
+  -webkit-background-clip: text;    /* ✅ Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* ✅ For Safari */
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 4rem;
+}
+
+/* Project layout */
+.modern-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(162, 89, 255, 0.1);
+  box-shadow: 0 0 40px rgba(162, 89, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Add staggered delays */
+.modern-project:nth-of-type(3) { animation-delay: 0.3s; }
+.modern-project:nth-of-type(4) { animation-delay: 0.6s; }
+
+/* Layout flip */
+.modern-project.right { flex-direction: row-reverse; }
+
+.project-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 14px;
+  transition: transform 0.5s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.03);
+}
+
+.project-text {
+  flex: 1;
+  text-align: left;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.project-text h3 {
+  font-size: 1.8rem;
+  background: linear-gradient(to right, #a259ff, #f14dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+   background-clip: text;            /* ✅ Standard syntax */
+  -webkit-background-clip: text;    /* ✅ Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* ✅ For Safari */
+}
+
+.project-text p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-tags span {
+  background: rgba(162, 89, 255, 0.1);
+  border: 1px solid rgba(162, 89, 255, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #a259ff;
+  transition: background 0.3s ease;
+}
+
+.project-tags span:hover {
+  background-color: rgba(162, 89, 255, 0.3);
+  color: #fff;
+}
+
+/* Button */
+.project-btn {
+  background: linear-gradient(to right, #a259ff, #f14dff);
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #0b061f;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.project-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modern-project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-text {
+    text-align: center;
+  }
+
+  .projects-glow-bg {
+    width: 700px;
+    height: 700px;
+    top: 60%;
+  }
+}
+
+/* 📦 Improved Horizontal Scroll Container */
+.horizontal-scroll {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  padding: 3rem 0 5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #a259ff transparent;
+  justify-content: flex-start;
+  scroll-padding-left: 2rem;
+  padding-left: 2rem;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #a259ff, #f14dff);
+  border-radius: 10px;
+}
+
+/* 🪩 Card Style */
+.scroll-card {
+  scroll-snap-align: start;
+  flex: 0 0 360px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(162, 89, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 0 60px rgba(162, 89, 255, 0.03), 0 0 60px rgba(162, 89, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.scroll-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 90px rgba(162, 89, 255, 0.25);
+}
+
+/* 📸 Image */
+.scroll-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 20px rgba(162, 89, 255, 0.08);
+}
+
+/* ✨ Title */
+.scroll-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(to right, #a259ff, #f14dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   background-clip: text;            /* ✅ Standard syntax */
+  -webkit-background-clip: text;    /* ✅ Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* ✅ For Safari */
+}
+
+/* 📝 Description */
+.scroll-card p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* 🏷 Tags */
+.scroll-card .project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
+  background-color: rgba(162, 89, 255, 0.1);
+  color: #a259ff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.project-tags span:hover {
+  background-color: rgba(162, 89, 255, 0.3);
+  color: white;
+}
+
+/* 🟣 CTA Button */
+.project-btn {
+  display: inline-block;
+  background: linear-gradient(to right, #a259ff, #f14dff);
+  color: #0b061f;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
+}
+
+/* 🤏 Responsive */
+@media (max-width: 768px) {
+  .scroll-card {
+    flex: 0 0 85%;
+  }
+
+  .scroll-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .scroll-card p {
+    font-size: 0.95rem;
+  }
+
+  .project-btn {
+    font-size: 0.85rem;
+  }
+}
