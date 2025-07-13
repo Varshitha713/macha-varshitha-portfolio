@@ -29,6 +29,22 @@ body {
 
 header{
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color:var(--bg-color); /* Adjust to your navbar bg */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #a259ff, #c996ff);
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.2s ease-out;
 }
 /* Navigation */
 .nav-bar {
